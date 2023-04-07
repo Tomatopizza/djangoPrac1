@@ -10,9 +10,11 @@ def calculate(request):
         number = int(number)
         exist_calc = Calculator.objects.get()
         exist_calc.num += number
+        result = exist_calc.num
         exist_calc.save()
-        if(exist_calc.num != None):
-            return HttpResponse(exist_calc.num)
+        return render(request, 'calc.html', {'calculate': result})
+        
+        
 
 def first_view(request):
     return render(request, 'calc.html')

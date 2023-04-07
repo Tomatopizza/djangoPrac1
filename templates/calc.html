@@ -1,0 +1,21 @@
+{% extends 'base.html' %}  <!--base.html을 확장해 그 아래에 signup.html 파일을 추가해 주겠다.-->
+
+{% block title %}
+    로그인
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="wrap">
+            <h2 class="title-center"> 계산기</h2>
+            <form class="form-area" method="post" action="/calc/">
+                {% csrf_token %}
+                <div class="form-group mt-2 mb-2">
+                    <label for="number">숫자</label>
+                    <input type="number" class="form-control" id="number" name="number">
+                </div>
+                <hr>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}
